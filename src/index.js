@@ -1,17 +1,19 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { GOOGLE_ANALYTICS_ID } from './constants';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Google Analytics loading
+if (process.env.NODE_ENV === "production") {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ANALYTICS_ID);
+} else {
+  console.info("Not loading Google Analytics in " + process.env.NODE_ENV + " environment")
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Main render action
+ReactDOM.render(<App />, document.getElementById('root'));
