@@ -32,22 +32,22 @@ export default class App extends React.Component {
     return (
       <div>
         <a href={GITHUB_URL}>
-          <ImgRibbon src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+          {/* <ImgRibbon src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /> */}
         </a>
         <Header>
           <h1>
-            The Ship's Log
+          Sōtō Zen Market
           </h1>
           <h6>
             <a target="_blank" rel="noopener noreferrer" href={OPENSEA_JS_URL}>
-              <img alt="OpenSea logo" className="mr-2" src="/opensea-logo.png" />OpenSea.js
-            </a> example dapp
+              <img alt="OpenSea logo" className="mr-2" src="/opensea-logo.png" />
+            </a> 
           </h6>
         </Header>
         <main>
-          <Log
+          <Log className="card"
             seaport={this.seaport}
-            accountAddress={this.state.accountAddress} />
+            accountAddress={this.state.accountAddress} className="card"/>
         </main>
       </div>
     )
@@ -58,10 +58,10 @@ const Header = styled.header`
   border-bottom: 1px solid lightgrey;
   padding: 10px;
   text-align: center;
-  background-color: #f4f9fd;
+  background-color: #040404;
 
   h6 img {
-    width: 24px;
+    width: 84px;
   }
 `
 

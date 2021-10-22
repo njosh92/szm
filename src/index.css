@@ -1,12 +1,19 @@
 body {
   font-family: Rubik, "Avenir Next", sans-serif;
   color: rgb(87, 87, 87);
-  background-color: white;
+  background-color: #f7d3e4
+
+  ;
 }
 h1, h2, h3 {
-  color: black;
+  color: #f7d3e4;
 }
-
+.card, .list-group-item{
+  background-color: #c76982;
+}
+.mr-2{
+  border-radius: 40%;
+}
 a {
-  color: #65acef;
+  color: #e3cdb3;
 }
