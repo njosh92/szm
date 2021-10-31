@@ -3,8 +3,16 @@ import styled from 'styled-components';
 import Log from '../Log'
 import { OpenSeaPort, Network } from 'opensea-js';
 import { web3Provider, onNetworkUpdate, OPENSEA_JS_URL, GITHUB_URL } from '../../constants';
+import { render } from 'react-dom';
+
+import Spotlight from '../spotlight';
+import { Link, Switch, Route, Redirect, useHistory, useNavigate } from 'react-router-dom';
+
 
 export default class App extends React.Component {
+
+
+
 
   state = {
     accountAddress: null
@@ -26,6 +34,7 @@ export default class App extends React.Component {
         accountAddress: res[0]
       })
     })
+
   }
 
   render() {
@@ -36,18 +45,36 @@ export default class App extends React.Component {
         </a>
         <Header>
           <h1>
-          Sōtō Zen Market
+            Sōtō Zen Market
           </h1>
           <h6>
             <a target="_blank" rel="noopener noreferrer" href={OPENSEA_JS_URL}>
-              <img alt="OpenSea logo" className="mr-2" src="/opensea-logo.png" />
-            </a> 
+              <img alt="Site logo" className="mr-2" src="/opensea-logo.png" />
+            </a>
           </h6>
+        <p>
+          <Link to = '/spotlight'>Spotlight</Link>
+        </p>
         </Header>
+
         <main>
+      
+        <Switch>
+          <Route exact path ="/spotlight">
+                <Spotlight/>
+          </Route>
+    
+        <Route exact path='/'>
           <Log className="card"
             seaport={this.seaport}
-            accountAddress={this.state.accountAddress} className="card"/>
+            accountAddress={this.state.accountAddress} className="card"
+          />
+        </Route>
+        </Switch>
+
+
+
+
         </main>
       </div>
     )
@@ -58,12 +85,14 @@ const Header = styled.header`
   border-bottom: 1px solid lightgrey;
   padding: 10px;
   text-align: center;
-  background-color: #040404;
+  background-color: #1b1b1b;
 
   h6 img {
     width: 84px;
+    color:red:;
   }
 `
+
 
 const ImgRibbon = styled.img`
   width: 150px;

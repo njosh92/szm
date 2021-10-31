@@ -21,7 +21,7 @@ const Card = styled.div.attrs({ className: "card mx-2 mb-4" })`
   }
 `
 
-export default class Order extends React.Component {
+export default class çOrder extends React.Component {
 
   state = {
     errorMessage: null,
@@ -41,7 +41,7 @@ export default class Order extends React.Component {
     // Ideally, you'd handle this error at a higher-level component
     // using props or Redux
     this.setState({ errorMessage: error.message })
-    setTimeout(() => this.setState({errorMessage: null}), 3000)
+    setTimeout(() => this.setState({ errorMessage: null }), 3000)
     throw error
   }
 
@@ -53,7 +53,7 @@ export default class Order extends React.Component {
     try {
       this.setState({ creatingOrder: true })
       await this.props.seaport.fulfillOrder({ order, accountAddress })
-    } catch(error) {
+    } catch (error) {
       this.onError(error)
     } finally {
       this.setState({ creatingOrder: false })
@@ -77,7 +77,7 @@ export default class Order extends React.Component {
         disabled={creatingOrder}
         onClick={buyAsset}
         className="btn btn-primary w-100">
-        
+
         Buy{creatingOrder ? "ing" : ""} for <SalePrice order={order} />
 
       </button>
@@ -87,7 +87,7 @@ export default class Order extends React.Component {
   renderAcceptOfferButton(canAccept = true) {
     const { creatingOrder } = this.state
     const { accountAddress, order } = this.props
-    
+
     const sellAsset = async () => {
       if (accountAddress && !canAccept) {
         this.setState({
@@ -141,22 +141,24 @@ export default class Order extends React.Component {
     const isOwner = accountAddress && accountAddress.toLowerCase() === owner.address.toLowerCase()
 
     return (
-      <Card>
-        
-        {asset
-          ? <AssetMetadata asset={asset} />
-          : <BundleMetadata bundle={assetBundle} />
-        }
-        
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">
-            Offered by <Account account={makerAccount} />
-          </li>
-          { errorMessage
-            ? <div className="alert alert-warning mb-0" role="alert">
+      <>
+
+        <Card>
+
+          {asset
+            ? <AssetMetadata asset={asset} />
+            : <BundleMetadata bundle={assetBundle} />
+          }
+
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              Offered by <Account account={makerAccount} />
+            </li>
+            {errorMessage
+              ? <div className="alert alert-warning mb-0" role="alert">
                 {errorMessage}
               </div>
-            : <li className="list-group-item">
+              : <li className="list-group-item">
                 {order.side === OrderSide.Buy
                   ? this.renderAcceptOfferButton(isOwner)
                   : null
@@ -166,12 +168,13 @@ export default class Order extends React.Component {
                   : null
                 }
               </li>
-          }
-        </ul>
-        <div className="card-footer">
-          <small className="text-muted">Posted {timeLabel}</small>
-        </div>
-      </Card>
+            }
+          </ul>
+          <div className="card-footer">
+            <small className="text-muted">Posted {timeLabel}</small>
+          </div>
+        </Card>
+      </>
     )
   }
 }

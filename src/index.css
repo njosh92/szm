@@ -1,19 +1,41 @@
 body {
   font-family: Rubik, "Avenir Next", sans-serif;
   color: rgb(87, 87, 87);
-  background-color: #f7d3e4
-
-  ;
+  background-color: #f7d3e4;
 }
+
 h1, h2, h3 {
   color: #f7d3e4;
 }
-.card, .list-group-item{
+
+.card, .list-group-item {
+  background-color: #000000;
+  margin-left: auto 0px;
+  ;
+}
+
+.container {
+  width: 60%;
+  text-align: center;
+}
+
+.mr-2 {
+  border-radius: 48%;
   background-color: #c76982;
 }
-.mr-2{
-  border-radius: 40%;
+
+.btn-17 {
+  /* margin-left: 360px; */
+  background-color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+.emb-card {
+  width: 460px;
+  margin: 0px auto;
+  margin-top: 10px;
+}
+
 a {
   color: #e3cdb3;
 }

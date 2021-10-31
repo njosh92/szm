@@ -1,10 +1,17 @@
-import * as Web3 from 'web3'
+// import * as Web3 from 'web3'
 import BigNumber from 'bignumber.js'
 import { PortisProvider } from 'portis'
+import Portis from '@portis/web3';
+import Web3 from 'web3';
+
+
+const portis = new Portis('1a6fe572-3c73-4419-919b-e3296e77d107', 'mainnet');
+const web3 = new Web3(portis.provider);
+
 
 export const GOOGLE_ANALYTICS_ID = 'UA-111688253-4'
-export const OPENSEA_URL = "https://opensea.io"
-export const OPENSEA_JS_URL = "https://github.com/ProjectOpenSea/opensea-js"
+export const OPENSEA_URL =  "https://opensea.io"
+export const OPENSEA_JS_URL = "https://www.youtube.com/watch?v=Zdm6winEDwQ"
 export const GITHUB_URL = "https://github.com/njosh92/szm"
 export const DEFAULT_DECIMALS = 18
 export let web3Provider = typeof web3 !== 'undefined'
@@ -21,6 +28,8 @@ export async function connectWallet() {
   if (!window.web3) {
     web3Provider = new PortisProvider({
       // Put your Portis API key here
+      apiKey: "1a6fe572-3c73-4419-919b-e3296e77d107"
+      
     })
   } else if (window.ethereum) {
     window.ethereum.enable()
