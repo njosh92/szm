@@ -4,6 +4,7 @@ import Log from '../Log'
 import { OpenSeaPort, Network } from 'opensea-js';
 import { web3Provider, onNetworkUpdate, OPENSEA_JS_URL, GITHUB_URL } from '../../constants';
 import { render } from 'react-dom';
+import { VFXDiv, VFXSpan } from 'react-vfx';
 
 import Spotlight from '../spotlight';
 import { Link, Switch, Route, Redirect, useHistory, useNavigate } from 'react-router-dom';
@@ -41,36 +42,42 @@ export default class App extends React.Component {
     return (
       <div>
         <a href={GITHUB_URL}>
-          {/* <ImgRibbon src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /> */}
+                
         </a>
         <Header>
-          <h1>
+          <VFXDiv className='title' shader='shine'>
             Sōtō Zen Market
-          </h1>
+
+          </VFXDiv>
+
+
+
+
           <h6>
             <a target="_blank" rel="noopener noreferrer" href={OPENSEA_JS_URL}>
               <img alt="Site logo" className="mr-2" src="/opensea-logo.png" />
             </a>
           </h6>
-        <p>
-          <Link to = '/spotlight'>Spotlight</Link>
-        </p>
+          <p className='link'>
+            <Link to='/spotlight'>SPOTLIGHT</Link>
+          </p>
         </Header>
 
         <main>
-      
-        <Switch>
-          <Route exact path ="/spotlight">
-                <Spotlight/>
-          </Route>
-    
-        <Route exact path='/'>
-          <Log className="card"
-            seaport={this.seaport}
-            accountAddress={this.state.accountAddress} className="card"
-          />
-        </Route>
-        </Switch>
+
+          <Switch>
+            <Route exact path="/spotlight">
+              <Spotlight />
+
+            </Route>
+
+            <Route exact path='/'>
+              <Log className="card"
+                seaport={this.seaport}
+                accountAddress={this.state.accountAddress} className="card"
+              />
+            </Route>
+          </Switch>
 
 
 
@@ -87,7 +94,7 @@ const Header = styled.header`
   text-align: center;
   background-color: #1b1b1b;
 
-  h6 img {
+  h6 img {z
     width: 84px;
     color:red:;
   }
