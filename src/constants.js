@@ -18,7 +18,7 @@ export let web3Provider = typeof web3 !== 'undefined'
   ? window.web3.currentProvider
   : new Web3.providers.HttpProvider('https://mainnet.infura.io')
 
-// Replace this with Redux for more complex logic
+// Replace this with Redux for more complex logic test
 const networkCallbacks = []
 export const onNetworkUpdate = (callback) => {
   networkCallbacks.push(callback)
