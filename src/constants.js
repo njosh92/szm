@@ -11,7 +11,7 @@ const web3 = new Web3(portis.provider);
 
 export const GOOGLE_ANALYTICS_ID = 'UA-111688253-4'
 export const OPENSEA_URL =  "https://opensea.io"
-export const OPENSEA_JS_URL = "https://www.youtube.com/watch?v=Zdm6winEDwQ"
+export const OPENSEA_JS_URL = "https://www.hiddenstar.io"
 export const GITHUB_URL = "https://github.com/njosh92/szm"
 export const DEFAULT_DECIMALS = 18
 export let web3Provider = typeof web3 !== 'undefined'
