@@ -36,7 +36,7 @@ export default class çOrder extends React.Component {
     seaport: PropTypes.object.isRequired,
     accountAddress: PropTypes.string
   }
-
+    
   onError(error) {
     // Ideally, you'd handle this error at a higher-level component
     // using props or Redux

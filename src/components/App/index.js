@@ -4,10 +4,10 @@ import Log from '../Log'
 import { OpenSeaPort, Network } from 'opensea-js';
 import { web3Provider, onNetworkUpdate, OPENSEA_JS_URL, GITHUB_URL } from '../../constants';
 import { render } from 'react-dom';
-import { VFXDiv, VFXSpan } from 'react-vfx';
+import { VFXDiv} from 'react-vfx';
 
 import Spotlight from '../spotlight';
-import { Link, Switch, Route, Redirect, useHistory, useNavigate } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 
 
 export default class App extends React.Component {
@@ -94,7 +94,7 @@ const Header = styled.header`
   text-align: center;
   background-color: #1b1b1b;
 
-  h6 img {z
+  h6 img {
     width: 84px;
     color:red:;
   }

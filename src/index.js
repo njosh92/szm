@@ -10,6 +10,7 @@ import './index.css';
 import { GOOGLE_ANALYTICS_ID } from './constants';
 import { ethers } from "ethers"
 
+
 const fetcher = ["ethers", { ethers, provider: ethers.getDefaultProvider() }]
 
 // Google Analytics loading
@@ -26,12 +27,8 @@ if (process.env.NODE_ENV === "production") {
 ReactDOM.render(
   <VFXProvider>
     <NftProvider fetcher={fetcher}>
-
-
       <BrowserRouter>
-        
         <App />
-
       </BrowserRouter>
     </NftProvider>
   </VFXProvider>,

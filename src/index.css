@@ -13,10 +13,25 @@ h1, h2, h3 {
   margin-left: auto 0px;
   ;
 }
-
+.link{
+  text-decoration:overline;
+  color: #c76982;
+  
+  
+}
+a{
+  text-decoration: none;
+  color: #c76982;
+  ;
+}
 .container {
   width: 60%;
   text-align: center;
+}
+
+.title {
+  height: 35px;
+  margin-left: 10px;
 }
 
 .mr-2 {
@@ -26,16 +41,15 @@ h1, h2, h3 {
 
 .btn-17 {
   /* margin-left: 360px; */
-  background-color: red;
+  background-color: #d2454b
+  ;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .emb-card {
   width: 460px;
   margin: 0px auto;
   margin-top: 10px;
 }
 
-a {
-  color: #e3cdb3;
-}
